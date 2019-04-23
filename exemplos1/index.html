@@ -9,8 +9,9 @@
 
         <div id="app">
 
-            <test-titulo titulo="Esse é o título"></test-titulo>
+            <test-titulo v-bind:titulo="meuTitulo"></test-titulo>
 
+            <input type="text" v-model="meuTitulo">
         </div>
 
 
@@ -22,7 +23,10 @@
             });
 
             var app = new Vue({
-                el:"#app"
+                el:"#app",
+                data:{
+                    meuTitulo:'Esse é o título'
+                }
 
             });
 
