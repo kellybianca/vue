@@ -9,16 +9,16 @@
 
         <div id="app">
             {{ msg }}
-            <p v-bind:title="titulo"> Teste com Title </p>
+            <p v-bind:title="titulo">Teste com Title</p>
             <p v-if="condicao">Teste com IF</p>
             <p v-for="registro in registros">{{registro.titulo}}</p>
-
+            <button v-if="!clicou" v-on:click="usuarioClicou">salvar</button>
+            <button v-if="clicou" v-on:click="usuarioClicou">aguarde...</button>
         </div>
 
 
         <script type="text/javascript">
             var app = new Vue({
-
                 el:"#app",
                 data:{
                     msg:'Iniciando com Vue JS',
@@ -30,7 +30,13 @@
                         {titulo:'registro3'},
                         {titulo:'registro4'},
                         {titulo:'registro5'}
-                    ]
+                    ],
+                    clicou: false
+                },
+                methods:{
+                    usuarioClicou: function(){
+                        this.clicou = !this.clicou;
+                    }
                 }
             });
 
