@@ -9,7 +9,7 @@
 
         <div id="app">
 
-            <test-titulo></test-titulo>
+            <test-titulo titulo="Esse é o título"></test-titulo>
 
         </div>
 
@@ -17,7 +17,8 @@
         <script type="text/javascript">
 
             Vue.component('test-titulo',{
-                template:'<h2>Componente de titulo</h2>'
+                props:['titulo'],
+                template:'<h2>{{ titulo }}</h2>'
             });
 
             var app = new Vue({
