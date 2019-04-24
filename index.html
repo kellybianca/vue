@@ -64,6 +64,8 @@
                 </select>
             </p>
 
+            <p>Lazy: {{busca}}</p>
+            <p><input type="text" v-model.lazy="busca"></p>
 
         </div>
 
@@ -85,7 +87,8 @@
                     notificacoes:[],
                     sexo: null,
                     ano:'',
-                    cores:null
+                    cores:null,
+                    busca:''
                 }
             });
 
