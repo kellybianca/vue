@@ -65,7 +65,14 @@
             </p>
 
             <p>Lazy: {{busca}}</p>
-            <p><input type="text" v-model.lazy="busca"></p>
+            <p>
+                <input type="text" v-model.lazy="busca">
+            </p>
+
+            <p>Number: {{idade}} - tipo: {{typeof idade}}</p>
+            <p>
+                <input type="number" v-model.number="idade">
+            </p>
 
         </div>
 
@@ -88,7 +95,8 @@
                     sexo: null,
                     ano:'',
                     cores:null,
-                    busca:''
+                    busca:'',
+                    idade:null
                 }
             });
 
