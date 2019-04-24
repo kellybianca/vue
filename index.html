@@ -3,45 +3,42 @@
     <head>
         <meta charset="utf-8">
         <title>Introdução ao Vue JS</title>
-        <script src="https:/unpkg.com/vue"></script>
+        <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
 
         <div id="app">
-            {{ msg }}
-            <p v-bind:title="titulo">Teste com Title</p>
-            <p v-if="condicao">Teste com IF</p>
-            <p v-for="registro in registros">{{registro.titulo}}</p>
-            <button v-if="!clicou" v-on:click="usuarioClicou">salvar</button>
-            <button v-if="clicou" v-on:click="usuarioClicou">aguarde...</button>
+
+            <test-titulo titulo="Formulário"></test-titulo>
+
+            <p>Texto: {{texto}}</p>
             <p>
-                <input type="text" v-model="usuario.nome">
+                <input type="text" v-model="texto">
             </p>
-            <p>Nome: {{usuario.nome}}</p>
+
+            <p>Textarea: {{textarea}}</p>
+            <p style="white-space: pre-line">{{textarea}}</p>
+            <p>
+                <textarea v-model="textarea" rows="8" cols="80"></textarea>
+            </p>
+
+
         </div>
 
 
         <script type="text/javascript">
+
+            Vue.component('test-titulo',{
+                props:['titulo'],
+                template:'<h2>{{ titulo }}</h2>'
+            });
+
+
             var app = new Vue({
                 el:"#app",
                 data:{
-                    msg:'Iniciando com Vue JS',
-                    titulo:"Teste com V-Bind",
-                    condicao: true,
-                    registros: [
-                        {titulo:'registro1'},
-                        {titulo:'registro2'},
-                        {titulo:'registro3'},
-                        {titulo:'registro4'},
-                        {titulo:'registro5'}
-                    ],
-                    clicou: false,
-                    usuario:{nome:""}
-                },
-                methods:{
-                    usuarioClicou: function(){
-                        this.clicou = !this.clicou;
-                    }
+                    texto:'',
+                    textarea:''
                 }
             });
 
