@@ -72,8 +72,14 @@
 </template>
 
 <script>
+
+import teste from './componentes/teste.vue'
+
 export default {
   name: 'app',
+  components:{
+    teste
+  },
   data () {
     return {
      nomeProjeto: 'Netflix com Vue',
