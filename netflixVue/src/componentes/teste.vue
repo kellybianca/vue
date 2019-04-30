@@ -1,17 +1,17 @@
-<template>
-  <h1>{{titulo}}</h1>
+<template id="">
+    <h1>{{titulo}}</h1>
 </template>
 
 <script>
-export default {
-  name:'teste',
-  props:['titulo']
 
-}
+    export default{
+        name:  'test',
+        props: ['titulo']
+    }
 </script>
 
 <style lang="scss">
-h1{
-  color: red;
-}
+    h1{
+        color: red;
+    }
 </style>
